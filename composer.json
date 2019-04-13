@@ -2,7 +2,7 @@
   "name": "douma/laravel-controller-plugins",
   "type": "library",
   "description": "Laravel controller plugins",
-  "keywords": ["controllers", "plugins"],
+  "keywords": ["controllers", "plugins", "laravel"],
   "license": "MIT",
   "authors": [
     {
