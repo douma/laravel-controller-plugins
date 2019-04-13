@@ -1,6 +1,7 @@
 <?php
 
 namespace Douma\ControllerPlugins\Plugins;
+use Douma\ControllerPlugins\Contracts;
 
 class PageTitle extends BasePlugin
 {

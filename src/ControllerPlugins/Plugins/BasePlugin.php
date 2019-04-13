@@ -2,10 +2,11 @@
 
 namespace Douma\ControllerPlugins\Plugins;
 
-use Illuminate\Contracts\Config\Repository;
+use Illuminate\Config\Repository;
 use Douma\ControllerPlugins\Exceptions;
+use Douma\ControllerPlugins\Contracts;
 
-abstract class BasePlugin
+abstract class BasePlugin implements Contracts\ControllerPlugin
 {
     private $config = null;
 
