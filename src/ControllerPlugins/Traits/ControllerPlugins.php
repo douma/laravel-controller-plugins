@@ -19,7 +19,7 @@ trait ControllerPlugins
 
     private function _getConfig() : Repository
     {
-        $config = new \Illuminate\Config\Repository(config('controller_plugins'));
+        $config = new \Illuminate\Config\Repository(config('controller_plugins') ?: []);
         return ($this->config !== null) ? $this->config : $config;
     }
 
