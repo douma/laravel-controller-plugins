@@ -10,6 +10,8 @@ class ValidPlugin
     {
         return 1;
     }
+
+    public function setConfig(Repository $config){}
 }
 
 final class ControllerPluginsTest extends \Tests\TestCase
@@ -26,7 +28,7 @@ final class ControllerPluginsTest extends \Tests\TestCase
     {
         $config = new Illuminate\Config\Repository([[
             'name'=>'validPlugin',
-            'class'=>'stdClass'
+            'class'=>'ValidPlugin'
         ]]);
         $sut = $this->_getSut();
         $sut->setConfig($config);
@@ -54,4 +56,3 @@ final class ControllerPluginsTest extends \Tests\TestCase
         $this->assertEquals(1, $sut->validPlugin()->test());
     }
 }
-

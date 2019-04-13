@@ -4,6 +4,16 @@
 
 `composer require douma/laravel-controller-plugins`
 
+### Service Provider
+
+Register the following service provider:
+
+`Douma\ControllerPlugins\ServiceProvider::class`
+
+Publish the package for example config:
+
+`php artisan vendor:publish --provider="Douma\ControllerPlugins\ServiceProvider"`
+
 ## Introduction 
 
 Laravel Controller Plugins are plugins that make it easier to hide complexity in controllers.

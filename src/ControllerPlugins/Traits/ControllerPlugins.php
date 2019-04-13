@@ -36,7 +36,12 @@ trait ControllerPlugins
     {
         foreach($this->_getConfig()->all() as $item) {
             if($item['name'] == $name) {
-                return app()->make($item['class']);
+                $plugin = app()->make($item['class']);
+                $plugin->setConfig(isset($item['config']) ?
+                    new \Illuminate\Config\Repository($item['config']) :
+                        new \Illuminate\Config\Repository([])
+                );
+                return $plugin;
             }
         }
     }
