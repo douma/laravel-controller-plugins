@@ -10,13 +10,13 @@ Register the following service provider:
 
 `Douma\ControllerPlugins\ServiceProvider::class`
 
-Publish the package for example config:
+Publish the package example config:
 
 `php artisan vendor:publish --provider="Douma\ControllerPlugins\ServiceProvider"`
 
 ## Introduction 
 
-Laravel Controller Plugins are plugins that make it easier to hide complexity in controllers.
+Laravel Controller Plugins are plugins that make it easier to remove complexity from controllers.
 For example, one would write:
 
 ```php
@@ -43,7 +43,7 @@ class MyController
 
 We create untestable private methods. Now we can chose to create a `Service` for
 this but we can also chose to create a plugin for this, since page title
-is not worth creating a service. 
+is not worthy of a service.
 
 ## Using controller plugins 
 
