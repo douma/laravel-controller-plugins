@@ -16,9 +16,15 @@ trait ControllerPlugins
         $this->config = $config;
     }
 
+    private function _getConfig() : Repository
+    {
+        $config = new \Illuminate\Config\Repository(config('controller_plugins'));
+        return ($this->config !== null) ? $this->config : $config;
+    }
+
     private function _pluginExists(string $name) : bool
     {
-        foreach($this->config->all() as $item) {
+        foreach($this->_getConfig()->all() as $item) {
             if($item['name'] == $name) {
                 return true;
             }
@@ -28,17 +34,17 @@ trait ControllerPlugins
 
     private function _createPlugin(string $name)
     {
-        foreach($this->config->all() as $item) {
+        foreach($this->_getConfig()->all() as $item) {
             if($item['name'] == $name) {
                 return app()->make($item['class']);
             }
         }
     }
 
-    public function __call($name, array $arguments)
+    public function __call($method, $parameters)
     {
-        if($this->_pluginExists($name)) {
-            return $this->_createPlugin($name);
-        } else throw PluginNotFoundException::forName($name);
+        if($this->_pluginExists($method)) {
+            return $this->_createPlugin($method);
+        } else throw PluginNotFoundException::forName($method);
     }
 }

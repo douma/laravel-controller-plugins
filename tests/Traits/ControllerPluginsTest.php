@@ -1,6 +1,5 @@
 <?php
 
-use PHPUnit\Framework\TestCase;
 use Douma\ControllerPlugins\Exceptions\PluginNotFoundException;
 use Douma\ControllerPlugins\Traits\ControllerPlugins;
 use Illuminate\Contracts\Config\Repository;
@@ -13,7 +12,7 @@ class ValidPlugin
     }
 }
 
-final class ControllerPluginsTest extends TestCase
+final class ControllerPluginsTest extends \Tests\TestCase
 {
     private function _getSut()
     {
