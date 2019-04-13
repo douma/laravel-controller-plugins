@@ -1,0 +1,25 @@
+{
+  "name": "douma/laravel-controller-plugins",
+  "type": "library",
+  "description": "Laravel controller plugins",
+  "keywords": ["controllers", "plugins"],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Stefan Douma",
+      "email": "douma4@gmail.com",
+      "homepage": "https://github.com/douma"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Douma\\ControllerPlugins\\": "src/ControllerPlugins/"
+    }
+  },
+  "require": {
+    "php": "^7.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^7.0"
+  }
+}
