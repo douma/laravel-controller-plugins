@@ -6,9 +6,7 @@ final class TitlePluginTest extends \Tests\TestCase
 {
     public function test_should_pass_pageTitle_to_view()
     {
-        $sut = new \Douma\ControllerPlugins\Plugins\PageTitle(new \Illuminate\Config\Repository([
-            'title'=>'MySite | %s'
-        ]));
+        $sut = new \Douma\ControllerPlugins\Plugins\PageTitle();
         $sut->setConfig(new \Illuminate\Config\Repository([
             'title'=>'Test | %s'
         ]));

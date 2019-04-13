@@ -111,23 +111,16 @@ return [
 ### Config
 
 The `config`-namespace allows you to define extra configuration parameters
-which will be passed into the `__construct` of the plugin:
+which will be passed into the `setConfig` of the plugin and can be access through the `_getConfig`-method:
 
 ```php
 use Douma\ControllerPlugins\Plugins\BasePlugin;
 
 class PageTitlePlugin extends BasePlugin
-{
-    private $config;
-    
-    public function __construct(Container $config)
-    {
-        $this->config = $config;
-    }
-    
+{    
     public function set(string $name) : void 
     {
-        view()->share('pageTitle', sprintf($this->config->get('title'), $name));
+        view()->share('pageTitle', sprintf($this->_getConfig()->get('title'), $name));
     }
 }
 ```
@@ -136,3 +129,19 @@ class PageTitlePlugin extends BasePlugin
 
 Plugins are easy to test. Controllers are tested through integration tests, while the plugin can be tested
 through a unit test.
+
+### Unit testing
+
+Pass in a fake configuration:
+
+```php
+public function test_x()
+{
+    $sut = new MyPlugin();
+    $sut->setConfig(new \Illuminate\Config\Repository([
+        'myParam'=>'myValue'
+    ]));
+    
+    //... your assertions
+}
+```
