@@ -72,7 +72,9 @@ Plugins can return a return value just like any method can. But in this case
 the plugin shares a variable to the view.
 
 ```php
-class PageTitlePlugin implements ControllerPlugin
+use Douma\ControllerPlugins\Plugins\BasePlugin;
+
+class PageTitlePlugin extends BasePlugin
 {
     //...
     
@@ -111,7 +113,9 @@ The `config`-namespace allows you to define extra configuration parameters
 which will be passed into the `__construct` of the plugin:
 
 ```php
-class PageTitlePlugin implements ControllerPlugin
+use Douma\ControllerPlugins\Plugins\BasePlugin;
+
+class PageTitlePlugin extends BasePlugin
 {
     private $config;
     
