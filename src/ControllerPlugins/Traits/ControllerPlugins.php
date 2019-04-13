@@ -40,7 +40,7 @@ trait ControllerPlugins
                 $plugin = app()->make($item['class']);
                 $plugin->setConfig(isset($item['config']) ?
                     new \Illuminate\Config\Repository($item['config']) :
-                        new \Illuminate\Config\Repository([])
+                    new \Illuminate\Config\Repository([])
                 );
                 return $plugin;
             }
