@@ -2,9 +2,10 @@
 
 use Douma\ControllerPlugins\Exceptions\PluginNotFoundException;
 use Douma\ControllerPlugins\Traits\ControllerPlugins;
-use Illuminate\Contracts\Config\Repository;
+use Douma\ControllerPlugins\Contracts;
+use Illuminate\Config\Repository;
 
-class ValidPlugin
+class ValidPlugin implements Contracts\ControllerPlugin
 {
     public function test()
     {

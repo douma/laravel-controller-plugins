@@ -3,6 +3,7 @@
 namespace Douma\ControllerPlugins\Traits;
 use Douma\ControllerPlugins\Exceptions\PluginNotFoundException;
 use Illuminate\Contracts\Config\Repository;
+use Douma\ControllerPlugins\Contracts;
 
 trait ControllerPlugins
 {
@@ -32,7 +33,7 @@ trait ControllerPlugins
         return false;
     }
 
-    private function _createPlugin(string $name)
+    private function _createPlugin(string $name) : Contracts\ControllerPlugin
     {
         foreach($this->_getConfig()->all() as $item) {
             if($item['name'] == $name) {
