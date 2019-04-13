@@ -29,7 +29,7 @@ We create untestable private methods. Now we can chose to create a `Service` for
 this but we can also chose to create a plugin for this, since page title
 is not worth creating a service. 
 
-Example given below:
+## Using controller plugins 
 
 ```php
 use Douma\Traits\ControllerPlugins;
