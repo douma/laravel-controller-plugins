@@ -95,13 +95,13 @@ plugin name. It will lazy load the plugin when found in the configuration.
 The configuration specifies a plugin name, which will be the method to be called from the controller:
 
 ```php
-//configcontroller_plugins.php
+//config/controller_plugins.php
 return [
     [
-        'name'=>'pageTitle',
-        'class'=>Plugins/PageTitle::class,
+        'name'=>'title',
+        'class'=>Douma\ControllerPlugins\Plugins\PageTitle::class,
         'config'=>[
-            'title'=>'My blog | %s'
+            'title'=>'MySite.com | %s'
         ]
     ]
 ];
