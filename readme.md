@@ -1,5 +1,11 @@
 # Laravel Controller Plugins
 
+## Installation
+
+`composer require douma/laravel-controller-plugins`
+
+## Introduction 
+
 Laravel Controller Plugins are plugins that make it easier to hide complexity in controllers.
 For example, one would write:
 
