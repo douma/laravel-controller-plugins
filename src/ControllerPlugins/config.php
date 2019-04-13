@@ -1,7 +1,7 @@
 <?php
 
-/*
 return [
+    /*
     [
         'name'=>'title',
         'class'=>Douma\ControllerPlugins\Plugins\PageTitle::class,
@@ -9,5 +9,5 @@ return [
             'title'=>'MySite.com | %s'
         ]
     ]
+    */
 ];
-*/
