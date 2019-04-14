@@ -1,3 +1,9 @@
+[![Latest Stable Version](https://poser.pugx.org/douma/laravel-controller-plugins/v/stable)](https://packagist.org/packages/douma/laravel-controller-plugins)
+[![Total Downloads](https://poser.pugx.org/douma/laravel-controller-plugins/downloads)](https://packagist.org/packages/douma/laravel-controller-plugins)
+[![Monthly Downloads](https://poser.pugx.org/douma/laravel-controller-plugins/d/monthly)](https://packagist.org/packages/douma/laravel-controller-plugins)
+[![Latest Unstable Version](https://poser.pugx.org/douma/laravel-controller-plugins/v/unstable)](https://packagist.org/packages/douma/laravel-controller-plugins)
+[![License](https://poser.pugx.org/douma/laravel-controller-plugins/license)](https://packagist.org/packages/douma/laravel-controller-plugins)
+
 # Laravel Controller Plugins
 
 ## Installation
