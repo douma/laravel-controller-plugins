@@ -11,6 +11,7 @@ trait ControllerPlugins
      * @var $config Repository
      */
     private $config=null;
+    private $plugins = [];
 
     public function setConfig(Repository $config) : void
     {
@@ -33,15 +34,18 @@ trait ControllerPlugins
         return false;
     }
 
-    private function _createPlugin(string $name) : Contracts\ControllerPlugin
+    private function _callPlugin(string $name) : Contracts\ControllerPlugin
     {
         foreach($this->_getConfig()->all() as $item) {
-            if($item['name'] == $name) {
+            if(isset($this->plugins[$name])) {
+                return $this->plugins[$name];
+            } elseif($item['name'] == $name) {
                 $plugin = app()->make($item['class']);
                 $plugin->setConfig(isset($item['config']) ?
                     new \Illuminate\Config\Repository($item['config']) :
                     new \Illuminate\Config\Repository([])
                 );
+                $this->plugins[$name] = $plugin;
                 return $plugin;
             }
         }
@@ -50,7 +54,7 @@ trait ControllerPlugins
     public function __call($method, $parameters)
     {
         if($this->_pluginExists($method)) {
-            return $this->_createPlugin($method);
+            return $this->_callPlugin($method);
         } else throw PluginNotFoundException::forName($method);
     }
 }
