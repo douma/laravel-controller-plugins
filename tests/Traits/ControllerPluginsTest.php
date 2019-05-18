@@ -56,4 +56,15 @@ final class ControllerPluginsTest extends \Tests\TestCase
         $sut->setConfig($config);
         $this->assertEquals(1, $sut->validPlugin()->test());
     }
+
+    public function test_should_call_plugin_same_instance()
+    {
+        $config = new \Illuminate\Config\Repository([[
+            'name'=>'validPlugin',
+            'class'=>ValidPlugin::class
+        ]]);
+        $sut = $this->_getSut();
+        $sut->setConfig($config);
+        $this->assertSame($sut->validPlugin(), $sut->validPlugin());
+    }
 }
